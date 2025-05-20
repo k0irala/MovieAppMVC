@@ -1,0 +1,31 @@
+﻿@model FIrst_App.Models.MovieViewModel
+@{
+
+}
+<div class="card mt-4 shadow w-75 mx-auto">
+    <div class="card-header">Submitted Movie Details</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Movie Name</th>
+                <td>@Model.Title</td>
+            </tr>
+            <tr>
+                <th>Release Date</th>
+                <td>@Model.ReleaseDate.ToShortDateString()</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>
+                   @Model.genre.GenreName
+                </td>
+            </tr>
+            <tr>
+                <th>Rating</th>
+                <td>
+                    @Model.Rating / 5
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

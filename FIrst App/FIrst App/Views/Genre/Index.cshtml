@@ -1,0 +1,39 @@
+﻿@model List<FIrst_App.Models.GenreViewModel>
+
+@{
+    ViewData["Title"] = "Genre List";
+}
+
+<h2>@ViewData["Title"]</h2>
+<a href="/Genre/Add" class="btn btn-primary">Add New</a>
+<a href="/Home/AllData" class="btn btn-primary">Go To Movies</a>
+
+@if (Model == null)
+{
+    <p>No Genre Found.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>GenreName</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var genre in Model)
+            {
+                <tr>
+                    <td>@genre.Id</td>
+                    <td>@genre.GenreName</td>
+                    <td>
+                        <a href="/Genre/Edit/@genre.Id" class="btn btn-primary">Edit</a>
+                        <a href="/Genre/Delete/@genre.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,47 @@
+﻿@model List<FIrst_App.Models.MovieViewModel>
+
+@{
+	ViewData["Title"] = "Movies List";
+}
+
+<h2>@ViewData["Title"]</h2>
+<a href="/Home/Index" class="btn btn-primary">Add New</a>
+<a href="/Genre/Index" class="btn btn-primary">Go To Genre</a>
+
+@if (Model == null)
+{
+	<p>No movies found.</p>
+}
+else
+{
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Genre</th>
+				<th>Rating</th>
+				<th>Release Date</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var movie in Model)
+			{
+				<tr>
+					<td>@movie.Id</td>
+					<td>@movie.Title</td>
+					<td>
+						@movie.genre.GenreName
+					</td>
+					<td>@movie.Rating</td>
+					<td>@movie.ReleaseDate.ToString("yyyy-MM-dd")</td>
+					<td>
+						<a href="/Home/Edit/@movie.Id" class="btn btn-primary">Edit</a>
+						<a href="/Home/Delete/@movie.Id" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
