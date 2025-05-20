@@ -21,7 +21,6 @@ else
 				<th>Title</th>
 				<th>Genre</th>
 				<th>Rating</th>
-				<th>Poster</th>
 				<th>Release Date</th>
 				<th>Actions</th>
 			</tr>
@@ -36,7 +35,6 @@ else
 						@movie.genre.GenreName
 					</td>
 					<td>@movie.Rating</td>
-					<td><img src="~/@movie.MovieFilePath" height="300px" width="200px" alt="Image poster" /></td>
 					<td>@movie.ReleaseDate.ToString("yyyy-MM-dd")</td>
 					<td>
 						<a href="/Home/Edit/@movie.Id" class="btn btn-primary">Edit</a>
