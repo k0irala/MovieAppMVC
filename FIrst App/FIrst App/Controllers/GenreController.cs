@@ -46,7 +46,7 @@ namespace FIrst_App.Controllers
                 return RedirectToAction("Index");
             }
             ModelState.AddModelError("GenreName", "This genre already exists.");
-            return RedirectToAction("Add");
+            return View("Add");
         }
         public IActionResult Delete(int id)
         {

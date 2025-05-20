@@ -14,31 +14,66 @@ namespace FIrst_App.Services
         {
             if (id == 0)
             {
-                var movieData = new MovieViewModel()
+                if (movieViewModel.MovieFile != null && movieViewModel.MovieFile.Length > 0)
                 {
-                    Title = movieViewModel.Title,
-                    GenreId = movieViewModel.GenreId,
-                    Rating = movieViewModel.Rating,
-                    ReleaseDate = movieViewModel.ReleaseDate,
-                };
-                await dbContext.movie.AddAsync(movieData);
-                await dbContext.SaveChangesAsync();
-                return true;
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(movieViewModel.MovieFile.FileName);
+                    var fullPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        await movieViewModel.MovieFile.CopyToAsync(stream);
+                    }
+
+                    var PosterImagePath = "images/" + fileName;
+                    var moviePosterName = movieViewModel.MovieFile.FileName;
+                    var movieData = new MovieViewModel()
+                    {
+                        Title = movieViewModel.Title,
+                        GenreId = movieViewModel.GenreId,
+                        Rating = movieViewModel.Rating,
+                        ReleaseDate = movieViewModel.ReleaseDate,
+                        MovieFilePath = PosterImagePath,
+                        MovieFileName = moviePosterName,
+                    };
+                    await dbContext.movie.AddAsync(movieData);
+                    await dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+
             }
             else
             {
-                var movieData = new MovieViewModel()
+                var existingMovie = await dbContext.movie.FindAsync(movieViewModel.Id);
+                if (existingMovie == null)
+                    return false;
+
+                existingMovie.Title = movieViewModel.Title;
+                existingMovie.GenreId = movieViewModel.GenreId;
+                existingMovie.Rating = movieViewModel.Rating;
+                existingMovie.ReleaseDate = movieViewModel.ReleaseDate;
+
+                if (movieViewModel.MovieFile != null && movieViewModel.MovieFile.Length > 0)
                 {
-                    Id = movieViewModel.Id,
-                    Title = movieViewModel.Title,
-                    GenreId = movieViewModel.GenreId,
-                    Rating = movieViewModel.Rating,
-                    ReleaseDate = movieViewModel.ReleaseDate,
-                };
-                dbContext.movie.Update(movieData);
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(movieViewModel.MovieFile.FileName);
+                    var fullPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        await movieViewModel.MovieFile.CopyToAsync(stream);
+                    }
+
+                    existingMovie.MovieFilePath = "images/" + fileName;
+                    existingMovie.MovieFileName = movieViewModel.MovieFile.FileName;
+                }
+
+
+                dbContext.movie.Update(existingMovie);
                 await dbContext.SaveChangesAsync();
+
                 return true;
             }
+
 
 
         }
@@ -65,6 +100,7 @@ namespace FIrst_App.Services
                 ReleaseDate = s.ReleaseDate,
                 Rating = s.Rating,
                 GenreId = s.GenreId,
+                MovieFilePath = s.MovieFilePath,
                 genre = new GenreViewModel
                 {
                     Id = s.GenreId,

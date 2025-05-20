@@ -24,7 +24,6 @@ namespace FIrst_App.Controllers
         public IActionResult Save(MovieViewModel movieModel)
         {
             var rowsAffected = operations.AddMovie(movieModel, 0);
-
             if (rowsAffected.Result)
             {
                 return RedirectToAction("AllData");
@@ -76,7 +75,7 @@ namespace FIrst_App.Controllers
         public IActionResult Index()
 
         {
-           var genres =  operations.GetGenreSelectList();
+            var genres = operations.GetGenreSelectList();
             ViewBag.Genres = genres;
             return View();
         }

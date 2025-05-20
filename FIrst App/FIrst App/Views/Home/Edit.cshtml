@@ -7,7 +7,7 @@
 
 <div class="container">
 	<div class="card shadow mt-4 mx-auto" style="max-width: 600px;">
-		<form asp-controller="Home" asp-action="Edit" method="post">
+		<form asp-controller="Home" asp-action="Edit" method="post" enctype="multipart/form-data">
 			<div class="card-header">
 				Update Movie
 			</div>
@@ -44,6 +44,16 @@
 						<option value="5">5</option>
 					</select>
 					<span asp-validation-for="Rating" class="text-danger"></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="MovieFile" class="form-label"></label>
+					<input type="file" asp-for="MovieFile" class="form-control" />
+					<span asp-validation-for="MovieFile" class="text-danger"></span>
+					@if (!string.IsNullOrEmpty(Model.MovieFilePath))
+					{
+						<p>Current file: @Model.MovieFileName</p>
+						<img src="~/@Model.MovieFilePath" alt="Movie cover" style="max-height:150px;" />
+					}
 				</div>
 
 				<div class="card-footer d-flex justify-content-start gap-3">

@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="card shadow mt-4 mx-auto" style="max-width: 600px;">
-        <form asp-controller="Home" asp-action="Save" method="post">
+        <form asp-controller="Home" asp-action="Save" method="post" enctype="multipart/form-data">
             <div class="card-body">
                 <input type="hidden" name="Id" data-value="id" />
                 <div class="mb-3">
@@ -35,6 +35,11 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Movie Cover</label>
+                    <br />
+                    <input type="file" name="MovieFile" class="form-control"/>
                 </div>
             </div>
 

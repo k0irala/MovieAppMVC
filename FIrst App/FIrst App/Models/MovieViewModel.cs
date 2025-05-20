@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.Identity.Client;
 
 namespace FIrst_App.Models
 {
@@ -11,6 +13,10 @@ namespace FIrst_App.Models
         [Required]
         public int GenreId { get; set; }
         public int Rating { get; set; }
+        public string MovieFileName { get; set; }
+        public string MovieFilePath { get; set; }
+        [NotMapped]
+        public IFormFile MovieFile { get; set; }
         public GenreViewModel? genre { get; set; }
 
     }
