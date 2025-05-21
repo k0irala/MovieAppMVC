@@ -48,6 +48,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-oynBPXSCTQu5eEF4YNKq\u002BdHgpAfLAzwdSPvfvvUVv90="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"883679"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022oynBPXSCTQu5eEF4YNKq\u002BdHgpAfLAzwdSPvfvvUVv90=\u0022"},{"Name":"Last-Modified","Value":"Wed, 21 May 2025 07:27:36 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FIrst App/images/458c0cc3-cde2-46ff-8fa8-77863e526358.9269cmag84.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9269cmag84"},{"Name":"integrity","Value":"sha256-8cp20IN\u002BPgBqN3y8fSv61C5\u002BxKbOkC3AZ4BuBYylClw="},{"Name":"label","Value":"_content/FIrst App/images/458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"56332"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00228cp20IN\u002BPgBqN3y8fSv61C5\u002BxKbOkC3AZ4BuBYylClw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 21 May 2025 08:39:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FIrst App/images/458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-8cp20IN\u002BPgBqN3y8fSv61C5\u002BxKbOkC3AZ4BuBYylClw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"56332"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00228cp20IN\u002BPgBqN3y8fSv61C5\u002BxKbOkC3AZ4BuBYylClw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 21 May 2025 08:39:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FIrst App/images/785ee8ca-036e-4c33-991d-37472ee20397.74dsvhy7nz.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\785ee8ca-036e-4c33-991d-37472ee20397.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

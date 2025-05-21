@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gNKSApexa+K85sdGRp3AP6BDDDNgm932IoDhq96UQwI=",
+  "Hash": "svJvUVnNsRWSktHbgt9C1Uc1DK5gB4TJCU+ly65Lnis=",
   "Source": "FIrst App",
   "BasePath": "_content/FIrst App",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\0daec09a-c943-40e4-8719-9269e9f77119.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\saura\\source\\repos\\FIrst App\\FIrst App\\wwwroot\\images\\458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg",
+      "SourceId": "FIrst App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\saura\\source\\repos\\FIrst App\\FIrst App\\wwwroot\\",
+      "BasePath": "_content/FIrst App",
+      "RelativePath": "images/458c0cc3-cde2-46ff-8fa8-77863e526358#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9269cmag84",
+      "Integrity": "8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg"
     },
     {
       "Identity": "C:\\Users\\saura\\source\\repos\\FIrst App\\FIrst App\\wwwroot\\images\\785ee8ca-036e-4c33-991d-37472ee20397.jpg",
@@ -1811,6 +1832,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-oynBPXSCTQu5eEF4YNKq+dHgpAfLAzwdSPvfvvUVv90="
+        }
+      ]
+    },
+    {
+      "Route": "images/458c0cc3-cde2-46ff-8fa8-77863e526358.9269cmag84.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\FIrst App\\FIrst App\\wwwroot\\images\\458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 21 May 2025 08:39:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9269cmag84"
+        },
+        {
+          "Name": "label",
+          "Value": "images/458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
+        }
+      ]
+    },
+    {
+      "Route": "images/458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\FIrst App\\FIrst App\\wwwroot\\images\\458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 21 May 2025 08:39:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
         }
       ]
     },

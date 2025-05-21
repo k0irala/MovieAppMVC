@@ -1,6 +1,7 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\0daec09a-c943-40e4-8719-9269e9f77119.jpg
+wwwroot\images\458c0cc3-cde2-46ff-8fa8-77863e526358.jpeg
 wwwroot\images\785ee8ca-036e-4c33-991d-37472ee20397.jpg
 wwwroot\images\8fbe273e-0e0a-4b7f-8541-f291025b3c31.jpg
 wwwroot\images\ab409764-4e99-42e8-a813-dac663b4ab74.png
