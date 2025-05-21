@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Security.AccessControl;
 using FIrst_App.Data;
+using FIrst_App.Migrations;
 using FIrst_App.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,32 +15,81 @@ namespace FIrst_App.Services
         {
             if (id == 0)
             {
-                var movieData = new MovieViewModel()
+                if(movieViewModel.MoviePoster!=null && movieViewModel.MoviePoster.Length > 0)
                 {
-                    Title = movieViewModel.Title,
-                    GenreId = movieViewModel.GenreId,
-                    Rating = movieViewModel.Rating,
-                    ReleaseDate = movieViewModel.ReleaseDate,
-                };
-                await dbContext.movie.AddAsync(movieData);
-                await dbContext.SaveChangesAsync();
-                return true;
+                    
+                    var fileName = movieViewModel.MoviePoster.FileName;
+                    var posterPath = Guid.NewGuid().ToString() + Path.GetExtension(fileName);
+
+                    var fullPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", posterPath);
+
+                    var directory = Path.GetDirectoryName(fullPath);
+
+                    if (!Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+
+                    using(var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        await movieViewModel.MoviePoster.CopyToAsync(stream);
+                    }
+
+                    var posterImagePath = "images/" + posterPath;
+                    var moviePosterName = movieViewModel.MoviePoster.FileName;
+
+                    var movieData = new MovieViewModel()
+                    {
+                        Title = movieViewModel.Title,
+                        GenreId = movieViewModel.GenreId,
+                        Rating = movieViewModel.Rating,
+                        ReleaseDate = movieViewModel.ReleaseDate,
+                        MovieFileName = moviePosterName,
+                        MovieFilePath = posterImagePath
+                    };
+                    await dbContext.movie.AddAsync(movieData);
+                    await dbContext.SaveChangesAsync();
+                    return true;
+
+                }
+                return false;
+
+               
             }
             else
             {
-                var movieData = new MovieViewModel()
+                var existingMovie = await dbContext.movie.SingleOrDefaultAsync(x => x.Id == id);
+
+                if(existingMovie == null)
+                    return false;
+
+                existingMovie.Title = movieViewModel.Title;
+                existingMovie.ReleaseDate = movieViewModel.ReleaseDate;
+                existingMovie.Rating = movieViewModel.Rating;
+                existingMovie.GenreId = movieViewModel.GenreId;
+
+                if (movieViewModel.MoviePoster != null && movieViewModel.MoviePoster.Length > 0)
                 {
-                    Id = movieViewModel.Id,
-                    Title = movieViewModel.Title,
-                    GenreId = movieViewModel.GenreId,
-                    Rating = movieViewModel.Rating,
-                    ReleaseDate = movieViewModel.ReleaseDate,
-                };
-                dbContext.movie.Update(movieData);
+
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(movieViewModel.MoviePoster.FileName);
+                    var fullPath = Path.Combine(Directory.GetCurrentDirectory() + "/wwwroot/images", fileName);
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        await movieViewModel.MoviePoster.CopyToAsync(stream);
+                    }
+
+                    var posterImagePath = "images/" + fileName;
+                    var moviePosterName = movieViewModel.MoviePoster.FileName;
+
+                    existingMovie.MovieFilePath = "images/" + fileName;
+                    existingMovie.MovieFileName = movieViewModel.MoviePoster.FileName;
+                }
+
+                dbContext.movie.Update(existingMovie);
                 await dbContext.SaveChangesAsync();
                 return true;
             }
-
 
         }
         public List<MovieViewModel> getAllMovie()
@@ -65,6 +115,8 @@ namespace FIrst_App.Services
                 ReleaseDate = s.ReleaseDate,
                 Rating = s.Rating,
                 GenreId = s.GenreId,
+                MovieFilePath = s.MovieFilePath,
+                MovieFileName = s.MovieFileName,
                 genre = new GenreViewModel
                 {
                     Id = s.GenreId,

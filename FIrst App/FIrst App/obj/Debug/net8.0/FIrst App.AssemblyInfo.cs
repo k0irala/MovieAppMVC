@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FIrst App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c396eece638f63faed4014a6aec4636d46bdb19")]
 [assembly: System.Reflection.AssemblyProductAttribute("FIrst App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FIrst App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

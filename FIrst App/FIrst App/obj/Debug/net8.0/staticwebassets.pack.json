@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\saura\\source\\repos\\FIrst App\\FIrst App\\wwwroot\\images\\0daec09a-c943-40e4-8719-9269e9f77119.jpg",
+      "PackagePath": "staticwebassets\\images\\0daec09a-c943-40e4-8719-9269e9f77119.jpg"
+    },
+    {
       "Id": "C:\\Users\\saura\\source\\repos\\FIrst App\\FIrst App\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
