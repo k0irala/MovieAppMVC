@@ -60,6 +60,10 @@ namespace FIrst_App.Controllers
 
             return NotFound();
         }
+        public IActionResult AcccessDenied()
+        {
+            return RedirectToAction("AccessDenied","Home");
+        }
         public IActionResult Index()
         {
             var allGenres = databaseOperations.getAllGenres();
