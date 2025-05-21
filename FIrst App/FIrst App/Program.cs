@@ -1,3 +1,4 @@
+using FIrst_App.Attributes.SessionCheckAttribute;
 using FIrst_App.Data;
 using FIrst_App.Services;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,8 @@ builder.Services.AddDbContext<MovieContext>(options =>
     options.UseSqlServer(connectionString);
 });
 builder.Services.AddScoped<DatabaseOperations>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<UserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,6 +44,6 @@ app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=AllData}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

@@ -55,6 +55,11 @@ namespace FIrst_App.Controllers
         }
         public IActionResult AllData()
         {
+            var userId = HttpContext.Session.GetInt32("userId");
+            if (userId == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             var movieData = operations.getAllMovie();
             if (movieData == null)
             {
