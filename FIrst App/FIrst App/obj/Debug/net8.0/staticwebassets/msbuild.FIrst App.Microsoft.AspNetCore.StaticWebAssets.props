@@ -54,23 +54,59 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\FIrst App.et1okgf39n.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d08007a8-4c77-426e-9de4-d1db925c97b5.png'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\0daec09a-c943-40e4-8719-9269e9f77119.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>FIrst App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/FIrst App</BasePath>
-      <RelativePath>images/d08007a8-4c77-426e-9de4-d1db925c97b5.png</RelativePath>
+      <RelativePath>images/0daec09a-c943-40e4-8719-9269e9f77119.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>9whahw22ck</Fingerprint>
-      <Integrity>57VJI0pT8EyXALg7x524dETIAUw3X4Rrb8iFYknDpZg=</Integrity>
+      <Fingerprint>hjqwkpvgmw</Fingerprint>
+      <Integrity>oynBPXSCTQu5eEF4YNKq+dHgpAfLAzwdSPvfvvUVv90=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d08007a8-4c77-426e-9de4-d1db925c97b5.png'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\0daec09a-c943-40e4-8719-9269e9f77119.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\8fbe273e-0e0a-4b7f-8541-f291025b3c31.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>FIrst App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FIrst App</BasePath>
+      <RelativePath>images/8fbe273e-0e0a-4b7f-8541-f291025b3c31.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hjqwkpvgmw</Fingerprint>
+      <Integrity>oynBPXSCTQu5eEF4YNKq+dHgpAfLAzwdSPvfvvUVv90=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\8fbe273e-0e0a-4b7f-8541-f291025b3c31.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ab409764-4e99-42e8-a813-dac663b4ab74.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>FIrst App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FIrst App</BasePath>
+      <RelativePath>images/ab409764-4e99-42e8-a813-dac663b4ab74.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>sfbtra8l4a</Fingerprint>
+      <Integrity>2P38RxEKdRmzJQJ/uLHPgRFd6y3jor2LqcxyqNliSM0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ab409764-4e99-42e8-a813-dac663b4ab74.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))">
       <SourceType>Package</SourceType>

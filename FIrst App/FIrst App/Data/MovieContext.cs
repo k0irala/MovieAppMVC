@@ -10,7 +10,7 @@ namespace FIrst_App.Data
         public DbSet<MovieViewModel> movie { get; set; }
         public DbSet<GenreViewModel> genre { get; set; }
 
-
+        public DbSet<UserModel> user { get; set; }
 
         public DbSet<MovieWithGenre> MovieWithGenre {get; set; }
     }
