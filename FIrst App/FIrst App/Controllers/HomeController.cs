@@ -3,6 +3,7 @@ using FIrst_App.Models;
 using FIrst_App.Services;
 using FIrst_App.Attributes;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace FIrst_App.Controllers
@@ -82,6 +83,16 @@ namespace FIrst_App.Controllers
         {
            var genres =  operations.GetGenreSelectList();
             ViewBag.Genres = genres;
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult Privacy()
+        {
             return View();
         }
     }

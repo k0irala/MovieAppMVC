@@ -3,11 +3,13 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using FIrst_App.Services;
+using FIrst_App.Attributes.SessionCheckAttribute;
 
 namespace FIrst_App.Controllers
 {
     public class UserController(DatabaseOperations dbOps) : Controller
     {
+        [SessionCheck]
         public IActionResult Index()
         {
             var movieData = dbOps.getAllMovie();
