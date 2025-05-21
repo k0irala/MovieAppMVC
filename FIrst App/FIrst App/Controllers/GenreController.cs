@@ -1,10 +1,12 @@
-﻿using FIrst_App.Models;
+﻿using FIrst_App.Attributes;
+using FIrst_App.Models;
 using FIrst_App.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 
 namespace FIrst_App.Controllers
 {
+    [AdminOnly]
     public class GenreController(DatabaseOperations databaseOperations) : Controller
 
     {
