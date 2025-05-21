@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+	var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+	var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+	var userId = Context.Session.GetInt32("userId");
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -25,14 +30,12 @@
 						<li class="nav-item">
 							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
 						</li>
-						@if (!(ViewContext.RouteData.Values["controller"]?.ToString().Equals("Login", StringComparison.OrdinalIgnoreCase) == true
-											&& ViewContext.RouteData.Values["action"]?.ToString().Equals("Index", StringComparison.OrdinalIgnoreCase) == true))
+						@if (userId != null && !(currentController?.Equals("Login", StringComparison.OrdinalIgnoreCase) == true
+											&& currentAction?.Equals("Index", StringComparison.OrdinalIgnoreCase) == true))
 						{
-
 							<li class="nav-item" style="margin-left:80%">
 								<a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
 							</li>
-
 						}
 
 					</ul>

@@ -1,14 +1,13 @@
 using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
-using FIrst_App.Migrations;
 using FIrst_App.Models;
 using FIrst_App.Services;
+using FIrst_App.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace FIrst_App.Controllers
 {
+    [AdminOnly]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> logger;
@@ -84,17 +83,6 @@ namespace FIrst_App.Controllers
            var genres =  operations.GetGenreSelectList();
             ViewBag.Genres = genres;
             return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
